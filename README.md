@@ -10,4 +10,8 @@ To run:
     
     cd yolo
     
-    python manage runserver
+    python manage.py runserver
+
+To create admin user for test. 
+    
+    python manage.py createsuperuser
