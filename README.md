@@ -1,3 +1,5 @@
+Python 3 and virtualenv are required at machine.
+
 To run:
     
     git clone https://github.com/hs3city/hs-library-back.git
@@ -15,10 +17,6 @@ To run:
 To create admin user for test. 
     
     python manage.py createsuperuser
-
-To run:
-
-    python manage.py runserver
 
 Endpoints with docs:
 
