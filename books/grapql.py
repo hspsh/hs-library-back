@@ -8,13 +8,13 @@ from graphene_django import DjangoObjectType
 import graphene
 
 
-class User(DjangoObjectType):
+class BookType(DjangoObjectType):
     class Meta:
         model = Book
 
 
 class Query(graphene.ObjectType):
-    books = graphene.List(User)
+    books = graphene.List(BookType)
 
     def resolve_books(self, info):
         return Book.objects.all()
