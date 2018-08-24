@@ -1,4 +1,4 @@
-"""yolo URL Configuration
+"""hs-library-back URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
+from graphene_django.views import GraphQLView
+from books.schema import schema
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api-v1/', include('books.urls')),
+    url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
